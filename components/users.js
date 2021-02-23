@@ -3,6 +3,7 @@ const router = express.Router();
 const Ajv = require('ajv').default;
 const usersDataSchema = require('../test/schemas/usersDataSchema.json');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 const users =[
     {   
@@ -77,6 +78,17 @@ router.post('/', async (req, res) => {
     else{
         res.status(409).send("Username or email already taken");
     }    
+});
+
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const user = users.find(u => u.username == req.user.username);
+    if(!user){
+        res.status(404).send();
+    }
+    else{
+        res.status(200);
+        res.json(user);
+    }
 });
 
 module.exports = {

@@ -1,11 +1,27 @@
 const chai = require ('chai');
 const expect = require ('chai').expect;
+const assert = require('chai').assert;
 chai.use(require('chai-http'));
+chai.use(require('chai-json-schema'));
 const server = require('../server');
+const api = 'http://localhost:3000';
+const jsonwebtoken = require('jsonwebtoken');
 
 describe('Testing the /users endpoints', function() {
-    before(function() {
+
+    let userJwt = null;
+    let decodedJwt = null;
+    
+    before(async function() {
         server.start();
+
+        await chai.request(api)
+        .get('/logins')
+        .auth('FrancoisBLA', '12345678')
+        .then(response => {
+            userJwt = response.body.token;
+            decodedJwt = jsonwebtoken.decode(userJwt, { complete: true });
+        });
     }); 
 
     after(function() {
@@ -73,6 +89,30 @@ describe('Testing the /users endpoints', function() {
                 })
                 .then(response => {
                     expect(response.status).to.equal(409);
+                })
+                .catch(error => {
+                    throw error;
+                });
+        })
+    })
+    describe('Tests for the GET /users endpoint', function() {
+        it('User found', async function() {
+            await chai.request('http://localhost:3000')
+                .get('/users')
+                .set('Authorization', 'Bearer ' + userJwt)
+                .then(response => {
+                    expect(response.status).to.equal(200);
+                })
+                .catch(error => {
+                    throw error;
+                });
+        })
+
+        it('Unauthorized', async function() {
+            await chai.request('http://localhost:3000')
+                .get('/users')
+                .then(response => {
+                    expect(response.status).to.equal(401);
                 })
                 .catch(error => {
                     throw error;
