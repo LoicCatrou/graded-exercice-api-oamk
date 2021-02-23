@@ -12,6 +12,10 @@ app.set('port', (process.env.PORT || 3000));
 app.use(express.json());
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('Hello world');
+});
+
 app.use('/users', userComponent.router);
 app.use('/items', itemComponent);
 app.use('/logins', loginComponent);
