@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Schema of a user",
+    "description": "Complete schema of a user of the selling/buying plateform",
+    "default": {},
+    "examples": [
+        {
+            "username": "FrancoisBL",
+            "firstName": "François",
+            "lastName": "Blanchard",
+            "dateOfBirth": "2018-11-28T18:25:32+00:00",
+            "address": "13 rue de Montmartre",
+            "city": "75000 PARIS",
+            "country": "France",
+            "email": "test@hotmail.com",
+            "password": "12345678",
+            "phoneNumber": "0659790004"
+        }
+    ],
+    "required": [
+        "username",
+        "firstName",
+        "lastName",
+        "dateOfBirth",
+        "address",
+        "city",
+        "country",
+        "email",
+        "password",
+        "phoneNumber"
+    ],
+    "properties": {
+        "username": {
+            "$id": "#/properties/username",
+            "type": "string",
+            "title": "Username",
+            "description": "Username of a user",
+            "default": "",
+            "examples": [
+                "FrancoisB"
+            ],
+            "minLength":10
+        },
+        "firstName": {
+            "$id": "#/properties/firstName",
+            "type": "string",
+            "title": "First name",
+            "description": "First name of a user",
+            "default": "",
+            "examples": [
+                "François"
+            ]
+        },
+        "lastName": {
+            "$id": "#/properties/lastName",
+            "type": "string",
+            "title": "Last name",
+            "description": "Last name of a user",
+            "default": "",
+            "examples": [
+                "Blanchard"
+            ]
+        },
+        "dateOfBirth": {
+            "$id": "#/properties/dateOfBirth",
+            "type": "string",
+            "pattern": "^[0-9]{4}-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$",
+            "title": "Date of birth",
+            "description": "Date of birth of a user",
+            "default": "",
+            "examples": [
+                "2018-11-28T18:25:32+00:00"
+            ]
+        },
+        "address": {
+            "$id": "#/properties/address",
+            "type": "string",
+            "title": "Address",
+            "description": "Address of a user",
+            "default": "",
+            "examples": [
+                "13 rue de Montmartre"
+            ]
+        },
+        "city": {
+            "$id": "#/properties/city",
+            "type": "string",
+            "title": "City",
+            "description": "City and postal code of a user",
+            "default": "",
+            "examples": [
+                "75000 PARIS"
+            ]
+        },
+        "country": {
+            "$id": "#/properties/country",
+            "type": "string",
+            "title": "Country",
+            "description": "Country of a user",
+            "default": "",
+            "examples": [
+                "France"
+            ]
+        },
+        "email": {
+            "$id": "#/properties/email",
+            "type": "string",
+            "pattern": "[a-zA-Z0-9]+@[a-zA-Z0-9]+[.][a-zA-Z0-9]+",
+            "title": "Email",
+            "description": "Email of auser",
+            "default": "",
+            "examples": [
+                "test@hotmail.com"
+            ]
+        },
+        "password": {
+            "$id": "#/properties/password",
+            "type": "string",
+            "title": "Password",
+            "description": "Password of a user",
+            "default": "",
+            "examples": [
+                "123456"
+            ],
+            "minLength": 8
+        },
+        "phoneNumber": {
+            "$id": "#/properties/phoneNumber",
+            "type": "string",
+            "title": "Phone number",
+            "description": "Phone number of a user",
+            "default": "",
+            "examples": [
+                "0659790004"
+            ]
+        }
+    },
+    "additionalProperties": false
+}

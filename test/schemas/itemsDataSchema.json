@@ -1,0 +1,286 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Schema of an item",
+    "description": "Complete schema of a item of the selling/buying plateform",
+    "default": {},
+    "examples": [
+        {
+            "ref": 1,
+            "title": "Xiaomi Mi G9 Handheld Wireless Vacuum Cleaner Cordless Replaceable battery 2021",
+            "description": "100,000rpm high speed brushless motor，Leave dirt no place to hide.",
+            "category": "Home",
+            "address": "513 Jarvisville Road",
+            "city": "Manhattan, NY 10016 ",
+            "country": "United States",
+            "image": [],
+            "price": 229.99,
+            "deliveryType": "Shipping",
+            "seller": {
+                "username": "FrancoisBLA",
+                "firstName": "François",
+                "lastName": "Blanchard",
+                "address": "13 rue de Montmartre",
+                "city": "75000 PARIS",
+                "country": "France",
+                "email": "test@hotmail.com",
+                "phoneNumber": "0659790004"
+            },
+            "postingDate": "2021-02-07T00:00:00-00:00",
+            "lastModificationDate": null
+        }
+    ],
+    "required": [
+        "title",
+        "description",
+        "category",
+        "address",
+        "city",
+        "country",
+        "price",
+        "deliveryType"
+    ],
+    "properties": {
+        "ref": {
+            "$id": "#/properties/ref",
+            "type": "integer",
+            "title": "Reference",
+            "description": "Reference number of an item",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "Title",
+            "description": "Name of the item",
+            "default": "",
+            "examples": [
+                "Xiaomi Mi G9 Handheld Wireless Vacuum Cleaner Cordless Replaceable battery 2021"
+            ]
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "Description",
+            "description": "Description of the item",
+            "default": "",
+            "examples": [
+                "100,000rpm high speed brushless motor，Leave dirt no place to hide."
+            ]
+        },
+        "category": {
+            "$id": "#/properties/category",
+            "type": "string",
+            "title": "Category",
+            "description": "The category of the website where the item can be found",
+            "default": "",
+            "examples": [
+                "Home"
+            ]
+        },
+        "address": {
+            "$id": "#/properties/address",
+            "type": "string",
+            "title": "Address",
+            "description": "The address where is located the item",
+            "default": "",
+            "examples": [
+                "513 Jarvisville Road"
+            ]
+        },
+        "city": {
+            "$id": "#/properties/city",
+            "type": "string",
+            "title": "City and postal code",
+            "description": "The city and postal code where is located the item",
+            "default": "",
+            "examples": [
+                "Manhattan, NY 10016 "
+            ]
+        },
+        "country": {
+            "$id": "#/properties/country",
+            "type": "string",
+            "title": "Country",
+            "description": "The country where is located the item",
+            "default": "",
+            "examples": [
+                "United States"
+            ]
+        },
+        "image": {
+            "$id": "#/properties/image",
+            "type": "array",
+            "title": "Images",
+            "description": "Item images",
+            "default": [],
+            "examples": [
+                []
+            ],
+            "items": {
+                "$id": "#/properties/image/items"
+            }
+        },
+        "price": {
+            "$id": "#/properties/price",
+            "type": "number",
+            "title": "Price",
+            "description": "The price of the item",
+            "default": 0.0,
+            "examples": [
+                229.99
+            ],
+            "exclusiveMinimum": 0
+        },
+        "deliveryType": {
+            "$id": "#/properties/deliveryType",
+            "type": "string",
+            "title": "Delivery type",
+            "description": "Delivery type selected for the item",
+            "default": "",
+            "examples": [
+                "Shipping"
+            ],
+            "enum": ["Shipping", "Pickup"]
+        },
+        "seller": {
+            "$id": "#/properties/seller",
+            "type": "object",
+            "title": "Seller",
+            "description": "Seller informations, done automatically",
+            "default": {},
+            "examples": [
+                {
+                    "username": "FrancoisBLA",
+                    "firstName": "François",
+                    "lastName": "Blanchard",
+                    "address": "13 rue de Montmartre",
+                    "city": "75000 PARIS",
+                    "country": "France",
+                    "email": "test@hotmail.com",
+                    "phoneNumber": "0659790004"
+                }
+            ],
+            "required": [
+                "username",
+                "firstName",
+                "lastName",
+                "address",
+                "city",
+                "country",
+                "email",
+                "phoneNumber"
+            ],
+            "properties": {
+                "username": {
+                    "$id": "#/properties/seller/properties/username",
+                    "type": "string",
+                    "title": "Username",
+                    "description": "Seller username",
+                    "default": "",
+                    "examples": [
+                        "FrancoisBLA"
+                    ],
+                    "minLength":10
+                },
+                "firstName": {
+                    "$id": "#/properties/seller/properties/firstName",
+                    "type": "string",
+                    "title": "First name",
+                    "description": "Seller first name",
+                    "default": "",
+                    "examples": [
+                        "François"
+                    ]
+                },
+                "lastName": {
+                    "$id": "#/properties/seller/properties/lastName",
+                    "type": "string",
+                    "title": "Last name",
+                    "description": "Seller last name",
+                    "default": "",
+                    "examples": [
+                        "Blanchard"
+                    ]
+                },
+                "address": {
+                    "$id": "#/properties/seller/properties/address",
+                    "type": "string",
+                    "title": "Address",
+                    "description": "Seller address",
+                    "default": "",
+                    "examples": [
+                        "13 rue de Montmartre"
+                    ]
+                },
+                "city": {
+                    "$id": "#/properties/seller/properties/city",
+                    "type": "string",
+                    "title": "City and postal code",
+                    "description": "City and postal code of the seller",
+                    "default": "",
+                    "examples": [
+                        "75000 PARIS"
+                    ]
+                },
+                "country": {
+                    "$id": "#/properties/seller/properties/country",
+                    "type": "string",
+                    "title": "Country",
+                    "description": "Country of the seller",
+                    "default": "",
+                    "examples": [
+                        "France"
+                    ]
+                },
+                "email": {
+                    "$id": "#/properties/seller/properties/email",
+                    "type": "string",
+                    "pattern": "[a-zA-Z0-9]+@[a-zA-Z0-9]+[.][a-zA-Z0-9]+",
+                    "title": "Email",
+                    "description": "Email of the seller",
+                    "default": "",
+                    "examples": [
+                        "test@hotmail.com"
+                    ]
+                },
+                "phoneNumber": {
+                    "$id": "#/properties/seller/properties/phoneNumber",
+                    "type": "string",
+                    "title": "Phone number",
+                    "description": "Phone number of the seller",
+                    "default": "",
+                    "examples": [
+                        "0659790004"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "postingDate": {
+            "$id": "#/properties/postingDate",
+            "type": "string",
+            "title": "Posting date",
+            "description": "Posting date of the item, done automatically",
+            "default": "",
+            "examples": [
+                "2021-02-07T00:00:00-00:00Z"
+            ]
+        },
+        "lastModificationDate": {
+            "$id": "#/properties/lastModificationDate",
+            "type": "string",
+            "title": "Last modification date of the item",
+            "description": "Last modification date of the item, done automatically",
+            "default": "",
+            "examples": [
+                "2021-02-07T00:00:00-00:00"
+            ]
+        }
+    },
+    "additionalProperties": true
+}
