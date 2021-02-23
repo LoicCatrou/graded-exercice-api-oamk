@@ -18,6 +18,7 @@ nyc_output
 
 build/Release
 
+node_modules
 jspm_package
 
 .npm
