@@ -81,14 +81,6 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    /*const user = users.find(u => u.username == req.user.username);
-    if(!user){
-        res.status(404).send();
-    }
-    else{
-        res.status(200);
-        res.json(user);
-    }*/
     res.json(users);
 });
 
