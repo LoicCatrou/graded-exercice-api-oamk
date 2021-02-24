@@ -55,7 +55,13 @@ const items =[
 ]
 
 router.get('/', (req, res) => {
-    res.json(items);
+    if(items == undefined){
+        res.status(404).send();
+    }
+    else{
+        res.json(items);
+        res.status(200).send();
+    }
 });
 
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {

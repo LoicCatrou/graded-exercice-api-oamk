@@ -99,6 +99,19 @@ describe('Testing the /items endpoints', function() {
         });
     });
 
+    describe('Tests for the GET /items endpoint', function() {
+        it('Items found', async function() {
+            await chai.request('http://localhost:3000')
+                .get('/items')
+                .then(response => {
+                    expect(response.status).to.equal(200);
+                })
+                .catch(error => {
+                    throw error;
+                });
+        })
+    })
+
     describe('Tests for the GET /items/publication/{date} endpoint', function() {
         it('Item(s) found', async function() {
             await chai.request(api)

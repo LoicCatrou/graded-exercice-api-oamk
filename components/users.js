@@ -81,7 +81,13 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    res.json(users);
+    if(users == undefined){
+        res.status(404).send();
+    }
+    else{
+        res.json(users);
+        res.status(200).send();
+    }
 });
 
 module.exports = {
