@@ -259,7 +259,7 @@
                     ]
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": true
         },
         "postingDate": {
             "$id": "#/properties/postingDate",
