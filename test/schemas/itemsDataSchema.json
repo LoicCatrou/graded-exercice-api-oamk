@@ -120,7 +120,10 @@
             "default": [],
             "examples": [
                 []
-            ]
+            ],
+            "items": {
+                "$id": "#/properties/image/items"
+            }
         },
         "price": {
             "$id": "#/properties/price",
@@ -130,7 +133,8 @@
             "default": 0.0,
             "examples": [
                 229.99
-            ]
+            ],
+            "exclusiveMinimum": 0
         },
         "deliveryType": {
             "$id": "#/properties/deliveryType",
@@ -142,120 +146,6 @@
                 "Shipping"
             ],
             "enum": ["Shipping", "Pickup"]
-        },
-        "seller": {
-            "$id": "#/properties/seller",
-            "type": "object",
-            "title": "Seller",
-            "description": "Seller informations, done automatically",
-            "default": {},
-            "examples": [
-                {
-                    "username": "FrancoisBLA",
-                    "firstName": "François",
-                    "lastName": "Blanchard",
-                    "address": "13 rue de Montmartre",
-                    "city": "75000 PARIS",
-                    "country": "France",
-                    "email": "test@hotmail.com",
-                    "phoneNumber": "0659790004"
-                }
-            ],
-            "required": [
-                "username",
-                "firstName",
-                "lastName",
-                "address",
-                "city",
-                "country",
-                "email",
-                "phoneNumber"
-            ],
-            "properties": {
-                "username": {
-                    "$id": "#/properties/seller/properties/username",
-                    "type": "string",
-                    "title": "Username",
-                    "description": "Seller username",
-                    "default": "",
-                    "examples": [
-                        "FrancoisBLA"
-                    ],
-                    "minLength":10
-                },
-                "firstName": {
-                    "$id": "#/properties/seller/properties/firstName",
-                    "type": "string",
-                    "title": "First name",
-                    "description": "Seller first name",
-                    "default": "",
-                    "examples": [
-                        "François"
-                    ]
-                },
-                "lastName": {
-                    "$id": "#/properties/seller/properties/lastName",
-                    "type": "string",
-                    "title": "Last name",
-                    "description": "Seller last name",
-                    "default": "",
-                    "examples": [
-                        "Blanchard"
-                    ]
-                },
-                "address": {
-                    "$id": "#/properties/seller/properties/address",
-                    "type": "string",
-                    "title": "Address",
-                    "description": "Seller address",
-                    "default": "",
-                    "examples": [
-                        "13 rue de Montmartre"
-                    ]
-                },
-                "city": {
-                    "$id": "#/properties/seller/properties/city",
-                    "type": "string",
-                    "title": "City and postal code",
-                    "description": "City and postal code of the seller",
-                    "default": "",
-                    "examples": [
-                        "75000 PARIS"
-                    ]
-                },
-                "country": {
-                    "$id": "#/properties/seller/properties/country",
-                    "type": "string",
-                    "title": "Country",
-                    "description": "Country of the seller",
-                    "default": "",
-                    "examples": [
-                        "France"
-                    ]
-                },
-                "email": {
-                    "$id": "#/properties/seller/properties/email",
-                    "type": "string",
-                    "pattern": "[a-zA-Z0-9]+@[a-zA-Z0-9]+[.][a-zA-Z0-9]+",
-                    "title": "Email",
-                    "description": "Email of the seller",
-                    "default": "",
-                    "examples": [
-                        "test@hotmail.com"
-                    ]
-                },
-                "phoneNumber": {
-                    "$id": "#/properties/seller/properties/phoneNumber",
-                    "type": "string",
-                    "title": "Phone number",
-                    "description": "Phone number of the seller",
-                    "default": "",
-                    "examples": [
-                        "0659790004"
-                    ]
-                }
-            },
-            "additionalProperties": false
         },
         "postingDate": {
             "$id": "#/properties/postingDate",
