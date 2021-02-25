@@ -31,16 +31,7 @@
             "lastModificationDate": null
         }
     ],
-    "required": [
-        "title",
-        "description",
-        "category",
-        "address",
-        "city",
-        "country",
-        "price",
-        "deliveryType"
-    ],
+    "required": [],
     "properties": {
         "ref": {
             "$id": "#/properties/ref",
@@ -165,16 +156,7 @@
                     "phoneNumber": "0659790004"
                 }
             ],
-            "required": [
-                "username",
-                "firstName",
-                "lastName",
-                "address",
-                "city",
-                "country",
-                "email",
-                "phoneNumber"
-            ],
+            "required": [],
             "properties": {
                 "username": {
                     "$id": "#/properties/seller/properties/username",
@@ -259,7 +241,7 @@
                     ]
                 }
             },
-            "additionalProperties": true
+            "additionalProperties": false
         },
         "postingDate": {
             "$id": "#/properties/postingDate",
@@ -282,5 +264,5 @@
             ]
         }
     },
-    "additionalProperties": true
+    "additionalProperties": false
 }
