@@ -43,7 +43,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "Shipping",
-                    postingDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(200);
@@ -66,7 +65,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "ByPlane",
-                    postingDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(400);
@@ -88,7 +86,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "ByPlane",
-                    postingDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(401);
@@ -196,7 +193,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "Pickup",
-                    lastModificationDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(200);
@@ -219,7 +215,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "ByPlane",
-                    lastModificationDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(400);
@@ -242,7 +237,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "Pickup",
-                    lastModificationDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(404);
@@ -265,7 +259,6 @@ describe('Testing the /items endpoints', function() {
                     images: ["https://www.lesalexiens.fr/wp-content/uploads/2021/02/test-xiaomi-mi-g9-avis-aspirateur-1024x683.jpg"],
                     price: 229.99,
                     deliveryType: "Pickup",
-                    lastModificationDate: new Date().toISOString(),
                 })
                 .then(response => {
                     expect(response.status).to.equal(401);

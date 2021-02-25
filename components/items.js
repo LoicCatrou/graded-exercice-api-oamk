@@ -65,10 +65,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-    //const ajv = new Ajv();
-    //const validate = ajv.compile(itemsDataSchema);
-    //const valid = validate(req.body);
-    const valid = true;
+    const ajv = new Ajv();
+    const validate = ajv.compile(itemsDataSchema);
+    const valid = validate(req.body);
     if(valid==true){
         const item = {
             ref: items.length +1,
@@ -78,11 +77,11 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
             address: req.body.address,
             city: req.body.city,
             country: req.body.country,
-            image: req.body.image,
+            image: null,
             price: req.body.price,
             deliveryType: req.body.deliveryType,
             seller : req.user,
-            postingDate: req.body.postingDate,
+            postingDate: new Date().toISOString(),
             lastModificationDate: null
         };
 
@@ -134,8 +133,8 @@ router.put('/:ref', passport.authenticate('jwt', { session: false }), (req, res)
             item.price = req.body.price,
             item.deliveryType = req.body.deliveryType,
             item.seller = req.user,
-            item.postingDate = req.body.postingDate,
-            item.lastModificationDate = req.body.lastModificationDate
+            item.postingDate = item.postingDate,
+            item.lastModificationDate = new Date().toISOString()
             res.status(200);
             res.json(item);
             //console.log(item);
