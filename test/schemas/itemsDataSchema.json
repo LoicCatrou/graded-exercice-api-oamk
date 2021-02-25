@@ -120,10 +120,7 @@
             "default": [],
             "examples": [
                 []
-            ],
-            "items": {
-                "$id": "#/properties/image/items"
-            }
+            ]
         },
         "price": {
             "$id": "#/properties/price",
@@ -133,8 +130,7 @@
             "default": 0.0,
             "examples": [
                 229.99
-            ],
-            "exclusiveMinimum": 0
+            ]
         },
         "deliveryType": {
             "$id": "#/properties/deliveryType",
@@ -282,5 +278,5 @@
             ]
         }
     },
-    "additionalProperties": false
+    "additionalProperties": true
 }
