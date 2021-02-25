@@ -65,9 +65,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const ajv = new Ajv();
-    const validate = ajv.compile(itemsDataSchema);
-    const valid = validate(req.body);
+    //const ajv = new Ajv();
+    //const validate = ajv.compile(itemsDataSchema);
+    //const valid = validate(req.body);
+    const valid = true;
     if(valid==true){
         const item = {
             ref: items.length +1,
