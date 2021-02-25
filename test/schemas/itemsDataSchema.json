@@ -31,7 +31,16 @@
             "lastModificationDate": null
         }
     ],
-    "required": [],
+    "required": [
+        "title",
+        "description",
+        "category",
+        "address",
+        "city",
+        "country",
+        "price",
+        "deliveryType"
+    ],
     "properties": {
         "ref": {
             "$id": "#/properties/ref",
@@ -156,7 +165,16 @@
                     "phoneNumber": "0659790004"
                 }
             ],
-            "required": [],
+            "required": [
+                "username",
+                "firstName",
+                "lastName",
+                "address",
+                "city",
+                "country",
+                "email",
+                "phoneNumber"
+            ],
             "properties": {
                 "username": {
                     "$id": "#/properties/seller/properties/username",
