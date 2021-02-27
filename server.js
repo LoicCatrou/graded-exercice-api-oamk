@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send("Welcome on Loïc Catrou's API - API done for a graded exercice at OAMK");
 });
 
 app.use('/users', userComponent.router);
